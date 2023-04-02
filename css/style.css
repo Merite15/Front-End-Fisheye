@@ -5,7 +5,6 @@ body {
     margin: 0;
 }
 
-
 header {
     display: flex;
     flex-direction: row;
@@ -15,8 +14,13 @@ header {
 }
 
 h1 {
-    color: #901C1C;
+    color: #901c1c;
     margin-right: 100px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .logo {
@@ -39,12 +43,126 @@ h1 {
     flex-direction: column;
 }
 
-.photographer_section article h2 {
-    color: #D3573C;
+.photographer_section article h2,
+.photograph-header-name {
+    color: #d3573c;
     font-size: 36px;
+    margin-bottom: 0;
 }
 
-.photographer_section article img {
+.photographer_section article .localisation,
+.photograph-header-localisation {
+    color: #901c1c;
+    font-size: 18px;
+}
+
+.photographer_section article .slogan,
+.photograph-header-slogan {
+    font-size: 16px;
+}
+
+.photographer_section article .price {
+    color: #525252;
+    font-size: 12px;
+}
+
+.photographer_section article img,
+.photograph-header-image {
     height: 200px;
     width: 200px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    box-shadow: 1px 1px 7px rgb(100 100 100 / 60%);
+}
+
+.photograph-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+}
+
+/* FILTER CLASS */
+.section-filter {
+    margin: 10px 100px 20px;
+}
+
+/* GALLERY CLASS */
+.section-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 100px;
+    padding-bottom: 50px;
+}
+
+.gallery-item {
+    width: 32%;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+.gallery-item > button {
+    width: 100%;
+}
+
+.gallery-item > button > img,
+.gallery-item > button > video {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+
+.gallery-item-informations {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gallery-item-informations h5 {
+    color: #901d1d;
+    margin: 3px 0;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.gallery-item-likes {
+    display: flex;
+    align-items: center;
+    color: #901d1d;
+}
+.gallery-item-likes > img {
+    width: 20px;
+    margin-left: 7px;
+}
+
+/* GLOBAL INFORMATION */
+#global-information {
+    position: fixed;
+    bottom: 0;
+    right: 40px;
+    width: 200px;
+    background: #db8876;
+    border-radius: 10px 10px 0 0;
+    padding: 14px 25px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+}
+
+#global-information img {
+    width: 15px;
+}
+
+/* GENERALE CLASS */
+.d-flex {
+    display: flex;
+}
+.align-items-center {
+    align-items: center;
+}
+.ms-2 {
+    margin-left: 0.5rem;
 }

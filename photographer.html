@@ -1,37 +1,162 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <title>Fisheye - photographe </title>
+    <link href="css/photographer.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <title>Fisheye - Photographe</title>
   </head>
+
   <body>
     <header>
-      <img src="assets/images/logo.png" class="logo" />
+      <a href="index.html"
+        ><img src="assets/images/logo.png" alt="Logo fisheye" class="logo"
+      /></a>
     </header>
+
     <main id="main">
-      <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+      <section class="photograph-header">
+        <div class="photograph-header-information">
+          <h1 class="photograph-header-name" id="photograph-header-name"></h1>
+          <div
+            class="photograph-header-localisation"
+            id="photograph-header-localisation"
+          ></div>
+          <div
+            class="photograph-header-slogan"
+            id="photograph-header-slogan"
+          ></div>
+        </div>
+        <button
+          class="display_modal"
+          onclick="displayModal();document.getElementById('first_name').focus();"
+        >
+          Contactez-moi
+        </button>
+        <img
+          class="photograph-header-image"
+          id="photograph-header-image"
+          alt=""
+        />
+      </section>
+
+      <section class="section-filter">
+        <div class="selectBox"></div>
+      </section>
+
+      <section class="section-gallery" aria-label="Section gallery"></section>
+
+      <div id="global-information">
+        <div class="div-count">
+          <span id="photograph-likes">297 081</span>
+          <img src="assets/icons/like_color.svg" alt="like black" />
+        </div>
+        <div class="price"><span id="photograph-price"></span>€ / jour</div>
       </div>
     </main>
+
     <div id="contact_modal">
-			<div class="modal">
-				<header>
+      <div class="modal">
+        <header>
           <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <button
+            class="light-button"
+            id="contact_modal_close"
+            aria-label="Close modal button"
+            onclick="closeModal()"
+          >
+            <img
+              src="assets/icons/close.svg"
+              alt="Image de fermeture de modal"
+            />
+          </button>
         </header>
-				<form>
-					<div>
-						<label>Prénom</label>
-						<input />
-					</div>
-          <button class="contact_button">Envoyer</button>
-				</form>
-			</div>
-		</div>
-    <script src="/scripts/pages/photographer.js"></script>
-    <script src="/scripts/utils/contactForm.js"></script>
+        
+        <form>
+          <div>
+            <label for="first_name">Prénom</label>
+            <input type="text" id="first_name" />
+          </div>
+          <div>
+            <label for="last_name">Nom</label>
+            <input type="text" id="last_name" />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" />
+          </div>
+          <div>
+            <label for="message">Votre message</label>
+            <textarea name="" id="message" cols="30" rows="10"></textarea>
+          </div>
+          <button
+            type="button"
+            id="contact_modal_send"
+            class="contact_button"
+            onclick="contact()"
+          >
+            Envoyer
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div id="gallery_modal">
+      <div id="gallery-container">
+        <div id="gallery-content">
+          <video
+            playsinline=""
+            id="gallery-video"
+            autoplay=""
+            muted=""
+            loop=""
+          ></video>
+          <img src="" id="gallery-img" alt="" />
+          <div id="gallery-title"></div>
+        </div>
+        <button
+          class="light-button"
+          aria-label="Gallery button close"
+          id="gallery-close"
+        >
+          <img class="icons" src="assets/icons/cancel.svg" alt="" />
+        </button>
+        <button
+          class="light-button"
+          aria-label="Gallery button previous"
+          id="gallery-previous"
+        >
+          <img class="icons" src="assets/icons/arrow_left.svg" alt="" />
+        </button>
+        <button
+          class="light-button"
+          aria-label="Gallery button next"
+          id="gallery-next"
+        >
+          <img class="icons" src="assets/icons/arrow_right.svg" alt="" />
+        </button>
+      </div>
+    </div>
+
+    <script src="scripts/factories/photo.js"></script>
+
+    <script src="scripts/utils/contactForm.js"></script>
+
+    <script src="scripts/utils/gallery.js"></script>
+    <script src="scripts/utils/selectbox.js"></script>
+
+    <script src="scripts/pages/photographer.js"></script>
   </body>
 </html>
