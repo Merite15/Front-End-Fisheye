@@ -5,7 +5,7 @@ function photoFactory(data, position) {
     const mediaImage = `assets/photographers/${photographerId}/${image}`;
     const mediaVideo = `assets/photographers/${photographerId}/${video}`;
   
-    function getPhotoCardDOM() {
+    function getPhoto() {
       const item = document.createElement("div");
       item.setAttribute("class", "gallery-item");
       item.setAttribute("data-title", title);
@@ -79,6 +79,6 @@ function photoFactory(data, position) {
       return item;
     }
   
-    return { getPhotoCardDOM };
+    return { getPhoto };
   }
   

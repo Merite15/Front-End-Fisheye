@@ -1,6 +1,6 @@
 :root{
-    --bg-one : #901c1c;
-    --bg-two : #D3573C;
+    --primary-color : #901c1c;
+    --secondary-color : #D3573C;
 }
 
 #contact_modal {
@@ -12,7 +12,7 @@
     transform: translate(-50%, -50%);
 }
 
-.photograph-header {
+.photographer{
     background-color: #fafafa;
     height: 300px;
     margin: 0 100px;
@@ -31,16 +31,17 @@
     width: 170px;
     height: 70px;
     border: none;
-    background-color: var(--bg-one);
+    background-color: var(--primary-color);
     border-radius: 5px;
     cursor: pointer;
 }
 
 .display_modal:hover , .display_modal:focus{
-    background-color: var(--bg-two);
+    background-color: var(--secondary-color);
     transition: all .4s ease-in-out;
 }
 
+/* modal style */
 .modal {
     border-radius: 5px;
     background-color: #db8876;
@@ -73,6 +74,7 @@
     border: none;
 }
 
+/* form style */
 form {
     display: flex;
     width: 100%;
@@ -110,6 +112,7 @@ form textarea {
     cursor: pointer;
 }
 
+/* gallery style */
 #gallery_modal {
     position: fixed;
     left: 0;
@@ -150,7 +153,7 @@ form textarea {
     position: absolute;
     bottom: 0;
     left: 0;
-    color: #901c1c;
+    color: var(--primary-color);
     font-size: 20px;
     font-weight: 500;
 }
@@ -191,15 +194,14 @@ form textarea {
 }
 
 #filter-order {
-    background: #901c1c;
+    background: var(--primary-color);
     border: none;
     border-radius: 5px;
     padding: 10px;
     color: #ffffff;
 }
 
-/** Custom selectbox style **/
-
+/** Custom selectBox style **/
 .sort-title {
     display: flex;
     width: 110px;
@@ -249,7 +251,7 @@ form textarea {
     font-size: 1.2rem;
     top: 34%;
     right: 15px;
-    background-color: #901c1c;
+    background-color: var(--primary-color);
     color: #fafafa;
     z-index: 4;
 }
@@ -257,11 +259,13 @@ form textarea {
 .arrow-down-open {
     transform: rotate(180deg);
 }
+
 .popularité,
 .date,
 .titre {
     border-top: 2px solid #ffffff;
 }
+
 #select-block-options {
     display: none;
     width: 170px;

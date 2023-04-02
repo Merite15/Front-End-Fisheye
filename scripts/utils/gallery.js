@@ -5,9 +5,9 @@ document.getElementById("gallery-close").onclick = function(){
 
 document.getElementById("gallery-next").onclick = function(){
 
-    var total = document.getElementsByClassName("gallery-item-img").length-1;
-    var current = parseInt(this.getAttribute('src-current'));
-    var next = current+1;
+    let total = document.getElementsByClassName("gallery-item-img").length-1;
+    let current = parseInt(this.getAttribute('src-current'));
+    let next = current+1;
     if(current === total) {
         next = 0;
     }
@@ -17,9 +17,9 @@ document.getElementById("gallery-next").onclick = function(){
 
 document.getElementById("gallery-previous").onclick = function(){
 
-    var total = document.getElementsByClassName("gallery-item-img").length-1;
-    var current = parseInt(this.getAttribute('src-current'));
-    var next = current-1;
+    let total = document.getElementsByClassName("gallery-item-img").length-1;
+    let current = parseInt(this.getAttribute('src-current'));
+    let next = current-1;
     if(current === 0) {
         next = total;
     }
@@ -29,8 +29,7 @@ document.getElementById("gallery-previous").onclick = function(){
 
 function navButton(next){
 
-    var imgs = document.getElementsByClassName("gallery-item-img");
-
+    let imgs = document.getElementsByClassName("gallery-item-img");
 
     if(imgs[next].getAttribute('data-type') == 'img'){
         document.getElementById("gallery-video").classList.add('d-none');

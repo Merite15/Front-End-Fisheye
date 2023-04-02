@@ -1,5 +1,10 @@
 @import url("photographer.css");
 
+:root{
+    --primary-color : #901c1c;
+    --secondary-color : #D3573C;
+}
+
 body {
     font-family: "DM Sans", sans-serif;
     margin: 0;
@@ -14,7 +19,7 @@ header {
 }
 
 h1 {
-    color: #901c1c;
+    color: var(--primary-color);
     margin-right: 100px;
 }
 
@@ -44,20 +49,20 @@ a {
 }
 
 .photographer_section article h2,
-.photograph-header-name {
-    color: #d3573c;
+.photographer__name {
+    color: var(--secondary-color);
     font-size: 36px;
     margin-bottom: 0;
 }
 
 .photographer_section article .localisation,
-.photograph-header-localisation {
-    color: #901c1c;
+.photographer__localisation {
+    color: var(--primary-color);
     font-size: 18px;
 }
 
 .photographer_section article .slogan,
-.photograph-header-slogan {
+.photographer__slogan {
     font-size: 16px;
 }
 
@@ -67,7 +72,7 @@ a {
 }
 
 .photographer_section article img,
-.photograph-header-image {
+.photographer__image {
     height: 200px;
     width: 200px;
     object-fit: cover;
@@ -76,7 +81,7 @@ a {
     box-shadow: 1px 1px 7px rgb(100 100 100 / 60%);
 }
 
-.photograph-header {
+.photographer {
     display: flex;
     justify-content: space-between;
     align-items: center;

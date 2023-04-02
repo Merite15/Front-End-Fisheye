@@ -62,17 +62,17 @@ async function getPhotos() {
  * @returns {Promise<void>}
  */
 async function displayData(photographer) {
-  document.getElementById("photograph-header-name").innerHTML =
+  document.getElementById("photographer__name").innerHTML =
     photographer.name;
-  document.getElementById("photograph-header-localisation").innerHTML =
+  document.getElementById("photographer__localisation").innerHTML =
     photographer.city + ", " + photographer.country;
-  document.getElementById("photograph-header-slogan").innerHTML =
+  document.getElementById("photographer__slogan").innerHTML =
     photographer.tagline;
   document
-    .getElementById("photograph-header-image")
+    .getElementById("photographer__image")
     .setAttribute("src", "assets/photographers/" + photographer.portrait);
   document
-    .getElementById("photograph-header-image")
+    .getElementById("photographer__image")
     .setAttribute("alt", photographer.name);
   document.getElementById("photograph-price").innerHTML = photographer.price;
 
@@ -88,8 +88,8 @@ async function displayData(photographer) {
     if (photo.photographerId === photographer.id) {
       count += photo.likes;
       const photoModel = photoFactory(photo, position);
-      const photoCardDOM = photoModel.getPhotoCardDOM();
-      photosSection.appendChild(photoCardDOM);
+      const photoCard = photoModel.getPhoto();
+      photosSection.appendChild(photoCard);
       position += 1;
     }
   });
@@ -163,18 +163,17 @@ function openGallery(object) {
   modal.style.display = "flex";
 }
 
-document.onkeydown = (e) => {
-  e = e || window.event;
-  if (e.keyCode === 37) {
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'ArrowLeft') {
     document.getElementById("gallery-previous").click();
-  } else if (e.keyCode === 39) {
+  } else if (event.key === 'ArrowRight') {
     document.getElementById("gallery-next").click();
-  } else if (e.keyCode === 27) {
+  } else if (event.key === 'Escape') {
     document.getElementById("gallery-close").click();
     document.getElementById("contact_modal_close").click();
-  } else if (e.keyCode === 13) {
+  } else if (event.key === 'Enter') {
     document.getElementById("contact_modal_send").click();
   }
-};
+});
 
 init();
