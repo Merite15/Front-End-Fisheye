@@ -1,8 +1,10 @@
+// Close lightbox
 document.getElementById("gallery-close").onclick = function(){
     const modal = document.getElementById("gallery_modal");
     modal.style.display = "none";
 };
 
+// Next button in lightbox
 document.getElementById("gallery-next").onclick = function(){
 
     let total = document.getElementsByClassName("gallery-item-img").length-1;
@@ -12,11 +14,10 @@ document.getElementById("gallery-next").onclick = function(){
         next = 0;
     }
     navButton(next);
-
 };
 
+// Previous button in lightbox
 document.getElementById("gallery-previous").onclick = function(){
-
     let total = document.getElementsByClassName("gallery-item-img").length-1;
     let current = parseInt(this.getAttribute('src-current'));
     let next = current-1;
@@ -27,8 +28,8 @@ document.getElementById("gallery-previous").onclick = function(){
 
 };
 
+// Navigation lightbox buttons
 function navButton(next){
-
     let imgs = document.getElementsByClassName("gallery-item-img");
 
     if(imgs[next].getAttribute('data-type') == 'img'){

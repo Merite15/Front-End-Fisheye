@@ -52,13 +52,13 @@ document.querySelector("#select-first-option").addEventListener("click", () => {
 
 function closeSelect() {
   // On ferme le faux select
-
   selectOptions.style.display = "none";
   select.style.borderRadius = "7px";
 
   return (isOpen = false);
 }
 
+// Select options
 function handleButtonsOptions() {
   optionsButtons.forEach((button) => {
     button.onclick = () => {

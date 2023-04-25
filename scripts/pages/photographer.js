@@ -122,7 +122,7 @@ window.onload = function () {
       document.getElementById("photograph-likes").innerHTML = total + 1;
       document.getElementById("like-" + id).innerHTML = current + 1;
       this.setAttribute("data-like", 0);
-      img.setAttribute("src", "assets/icons/unlike.svg");
+      img.setAttribute("src", "assets/icons/dislike.svg");
     } else {
       document.getElementById("photograph-likes").innerHTML = total - 1;
       document.getElementById("like-" + id).innerHTML = current - 1;
@@ -146,10 +146,16 @@ function openGallery(object) {
     document.getElementById("gallery-video").classList.add("d-none");
     document.getElementById("gallery-img").classList.remove("d-none");
     document.getElementById("gallery-img").src = img.getAttribute("src");
+    document
+    .getElementById("gallery-img")
+    .setAttribute("alt", img.title);
   } else {
     document.getElementById("gallery-img").classList.add("d-none");
     document.getElementById("gallery-video").classList.remove("d-none");
     document.getElementById("gallery-video").src = img.getAttribute("src");
+    document
+    .getElementById("gallery-video")
+    .setAttribute("alt", img.title);
   }
 
   document.getElementById("gallery-title").innerHTML =
