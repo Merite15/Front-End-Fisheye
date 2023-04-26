@@ -42,14 +42,16 @@
 
         <button
           class="display_modal"
-          onclick="displayModal();document.getElementById('first_name').focus();"
+          onclick="displayModal();document.getElementById('first_name').focus(); "
         >
-          Contactez-moi
+          Contactez-moi 
+          <br>
         </button>
+
         <img
           class="photographer__image"
           id="photographer__image"
-          alt=""
+          alt="Image du photographe"
         />
       </section>
 
@@ -71,7 +73,8 @@
     <div id="contact_modal">
       <div class="modal">
         <header>
-          <h2>Contactez-moi</h2>
+          <h2>Contactez-moi
+            <span class="modal_name"></span></h2>
           <button
             class="light-button"
             id="contact_modal_close"
@@ -80,7 +83,7 @@
           >
             <img
               src="assets/icons/close.svg"
-              alt="Image de fermeture de modal"
+              alt="Icône de fermeture de modale"
             />
           </button>
         </header>
@@ -132,21 +135,21 @@
           aria-label="Gallery button close"
           id="gallery-close"
         >
-          <img class="icons" src="assets/icons/cancel.svg" alt="cancel-button" />
+          <img class="icons" src="assets/icons/cancel.svg" alt="Bouton de fermeture de la modale" />
         </button>
         <button
           class="light-button"
           aria-label="Gallery button previous"
           id="gallery-previous"
         >
-          <img class="icons" src="assets/icons/arrow_left.svg" alt="arrow-left" />
+          <img class="icons" src="assets/icons/arrow_left.svg" alt="Icône fleche gauche" />
         </button>
         <button
           class="light-button"
           aria-label="Gallery button next"
           id="gallery-next"
         >
-          <img class="icons" src="assets/icons/arrow_right.svg" alt="arrow-right" />
+          <img class="icons" src="assets/icons/arrow_right.svg" alt="Icône fleche droite" />
         </button>
       </div>
     </div>

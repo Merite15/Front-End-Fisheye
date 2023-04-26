@@ -5,6 +5,15 @@ function displayModal() {
   const modal = document.getElementById("contact_modal");
   modal.style.display = "block";
 
+  const button = document.querySelector(".display_modal");
+
+    // Récupérer le nom du photographe depuis l'attribut data-photographer
+  const photographer_name = document.getElementById("photographer__name")
+
+  // Afficher le nom du photographe à côté du texte "Contactez moi"
+  const contactText = document.querySelector(".modal header h2 span");
+  contactText.textContent = photographer_name.textContent;
+
   // Empêcher la navigation en utilisant la touche Tab
   const modalFocusableElements = modal.querySelectorAll(
     "input, textarea, button"

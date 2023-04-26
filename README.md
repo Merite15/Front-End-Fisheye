@@ -7,3 +7,4 @@ Rien à installer ici, il suffit d'ouvrir le fichier `index.html`.
 ### Accessibilité
 https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/Accessibility#Screenreaders
 
+https://achecker.achecks.ca/checker/index.php
