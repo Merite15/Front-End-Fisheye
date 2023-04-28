@@ -58,49 +58,6 @@ function closeSelect() {
   return (isOpen = false);
 }
 
-// SelectBox default options
-window.onload = function () {
-  optionsButtons.forEach((button) => {
-    button.onclick = () => {
-      const buttonText = button.textContent;
-
-      const sortValue = button.dataset.filtre;
-
-      button.innerHTML = firstButtonText.textContent;
-      button.dataset.filtre = firstButtonText.dataset.filtre;
-
-      firstButtonText.innerHTML = buttonText;
-      firstButtonText.dataset.filtre = sortValue;
-
-      closeSelect();
-      //
-
-      let items = document.querySelectorAll(".gallery-item");
-
-      [].slice
-        .call(items)
-        .sort(function (a, b) {
-          let firstOption = a.getAttribute("data-" + sortValue);
-          let secondOption = b.getAttribute("data-" + sortValue);
-
-          if (sortValue == "likes") {
-            return parseInt(firstOption) > parseInt(secondOption)
-              ? -1
-              : parseInt(firstOption) < parseInt(secondOption)
-              ? 1
-              : 0;
-          } else {
-            return firstOption < secondOption ? -1 : firstOption > secondOption ? 1 : 0;
-          }
-        })
-        .forEach(function (el) {
-          el.parentNode.appendChild(el);
-        });
-    };
-  });
-};
-
-
 // Choose selectBox options
 function handleButtonsOptions() {
   optionsButtons.forEach((button) => {
