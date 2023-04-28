@@ -62,8 +62,7 @@ async function getPhotos() {
  * @returns {Promise<void>}
  */
 async function displayData(photographer) {
-  document.getElementById("photographer__name").innerHTML =
-    photographer.name;
+  document.getElementById("photographer__name").innerHTML = photographer.name;
   document.getElementById("photographer__localisation").innerHTML =
     photographer.city + ", " + photographer.country;
   document.getElementById("photographer__slogan").innerHTML =
@@ -83,6 +82,11 @@ async function displayData(photographer) {
 
   let count = 0;
   let position = 1;
+
+  // Trier les photos par popularité (nombre de likes)
+  photos.sort(function (a, b) {
+    return b.likes - a.likes;
+  });
 
   photos.forEach((photo) => {
     if (photo.photographerId === photographer.id) {
@@ -146,16 +150,12 @@ function openGallery(object) {
     document.getElementById("gallery-video").classList.add("d-none");
     document.getElementById("gallery-img").classList.remove("d-none");
     document.getElementById("gallery-img").src = img.getAttribute("src");
-    document
-    .getElementById("gallery-img")
-    .setAttribute("alt", img.title);
+    document.getElementById("gallery-img").setAttribute("alt", img.title);
   } else {
     document.getElementById("gallery-img").classList.add("d-none");
     document.getElementById("gallery-video").classList.remove("d-none");
     document.getElementById("gallery-video").src = img.getAttribute("src");
-    document
-    .getElementById("gallery-video")
-    .setAttribute("alt", img.title);
+    document.getElementById("gallery-video").setAttribute("alt", img.title);
   }
 
   document.getElementById("gallery-title").innerHTML =
@@ -169,15 +169,15 @@ function openGallery(object) {
   modal.style.display = "flex";
 }
 
-document.addEventListener('keydown', (event) => {
-  if (event.key === 'ArrowLeft') {
+document.addEventListener("keydown", (event) => {
+  if (event.key === "ArrowLeft") {
     document.getElementById("gallery-previous").click();
-  } else if (event.key === 'ArrowRight') {
+  } else if (event.key === "ArrowRight") {
     document.getElementById("gallery-next").click();
-  } else if (event.key === 'Escape') {
+  } else if (event.key === "Escape") {
     document.getElementById("gallery-close").click();
     document.getElementById("contact_modal_close").click();
-  } else if (event.key === 'Enter') {
+  } else if (event.key === "Enter") {
     document.getElementById("contact_modal_send").click();
   }
 });
