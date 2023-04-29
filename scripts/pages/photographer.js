@@ -111,34 +111,28 @@ async function init() {
   displayData(photographer);
 }
 
-window.onload = function () {
-  // GESTION DES CLICKS SUR LES LIKES
-  let likes = document.getElementsByClassName("btn-like");
+// Like img
+function likePicture(element) {
+  let count = parseInt(element.getAttribute("data-like"));
+  let id = element.getAttribute("data-id");
+  let total = parseInt(document.getElementById("photograph-likes").innerHTML);
+  let current = parseInt(document.getElementById("like-" + id).innerHTML);
+  let img = element.getElementsByTagName("img")[0];
 
-  let likeAction = function () {
-    let count = parseInt(this.getAttribute("data-like"));
-    let id = this.getAttribute("data-id");
-    let total = parseInt(document.getElementById("photograph-likes").innerHTML);
-    let current = parseInt(document.getElementById("like-" + id).innerHTML);
-    let img = this.getElementsByTagName("img")[0];
-
-    if (count === 1) {
-      document.getElementById("photograph-likes").innerHTML = total + 1;
-      document.getElementById("like-" + id).innerHTML = current + 1;
-      this.setAttribute("data-like", 0);
-      img.setAttribute("src", "assets/icons/dislike.svg");
-    } else {
-      document.getElementById("photograph-likes").innerHTML = total - 1;
-      document.getElementById("like-" + id).innerHTML = current - 1;
-      this.setAttribute("data-like", 1);
-      img.setAttribute("src", "assets/icons/like.svg");
-    }
-  };
-
-  for (let i = 0; i < likes.length; i++) {
-    likes[i].addEventListener("click", likeAction, false);
+  if (count === 1) {
+    console.log("OK");
+    document.getElementById("photograph-likes").innerHTML = total + 1;
+    document.getElementById("like-" + id).innerHTML = current + 1;
+    element.setAttribute("data-like", 0);
+    img.setAttribute("src", "assets/icons/dislike.svg");
+  } else {
+    console.log("Non");
+    document.getElementById("photograph-likes").innerHTML = total - 1;
+    document.getElementById("like-" + id).innerHTML = current - 1;
+    element.setAttribute("data-like", 1);
+    img.setAttribute("src", "assets/icons/like.svg");
   }
-};
+}
 
 function openGallery(object) {
   let img =
