@@ -120,13 +120,11 @@ function likePicture(element) {
   let img = element.getElementsByTagName("img")[0];
 
   if (count === 1) {
-    console.log("OK");
     document.getElementById("photograph-likes").innerHTML = total + 1;
     document.getElementById("like-" + id).innerHTML = current + 1;
     element.setAttribute("data-like", 0);
     img.setAttribute("src", "assets/icons/dislike.svg");
   } else {
-    console.log("Non");
     document.getElementById("photograph-likes").innerHTML = total - 1;
     document.getElementById("like-" + id).innerHTML = current - 1;
     element.setAttribute("data-like", 1);
